@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- 分库策略 -->
+    <bean id="databaseShardingStrategy_id" class="com.dangdang.ddframe.rdb.sharding.api.strategy.database.DatabaseShardingStrategy">
+        <constructor-arg index="0" value="id"/>
+        <constructor-arg index="1">
+            <bean class="com.qtone.common.sharding.algorithm.SingleKeyModuloDatabaseShardingAlgorithm" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="databaseShardingStrategy_paperId" class="com.dangdang.ddframe.rdb.sharding.api.strategy.database.DatabaseShardingStrategy">
+        <constructor-arg name="shardingColumn" value="paperId"/>
+        <constructor-arg name="databaseShardingAlgorithm">
+            <bean class="com.qtone.common.sharding.algorithm.SingleKeyModuloDatabaseShardingAlgorithm"/>
+        </constructor-arg>
+    </bean>
+    <!-- 分表策略 -->
+    <bean id="tableShardingStrategy_questionId" class="com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrategy">
+        <constructor-arg name="shardingColumn" value="questionId"/>
+        <constructor-arg name="tableShardingAlgorithm">
+            <bean class="com.qtone.common.sharding.algorithm.SingleKeyModuloTableShardingAlgorithm"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="tableShardingStrategy_paperExamId" class="com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrategy">
+        <constructor-arg name="shardingColumn" value="paperExamId"/>
+        <constructor-arg name="tableShardingAlgorithm">
+            <bean class="com.qtone.common.sharding.algorithm.SingleKeyModuloTableShardingAlgorithm"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="tableShardingStrategy_batchId" class="com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrategy">
+        <constructor-arg index="0" value="batchId"/>
+        <constructor-arg index="1">
+            <bean class="com.qtone.common.sharding.algorithm.SingleKeyModuloTableShardingAlgorithm" />
+        </constructor-arg>
+    </bean>
+
+</beans>

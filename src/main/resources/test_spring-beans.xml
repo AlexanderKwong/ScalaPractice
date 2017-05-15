@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <import resource="classpath:test_spring-datasource.xml"/>
+    <!--<import resource="classpath:test_spring-activemq.xml"/>-->
+    <!--<import resource="spring-mail.xml"/>-->
+
+    <context:component-scan base-package="com.qtone"/>
+
+    <!--<bean id="dBUtil" class="com.qtone.common.connection.DBUtil">
+        <property name="shardingDataSource">
+            <ref bean="shardingDataSource"/>
+        </property>
+        <property name="hiveDataSource">
+            <ref bean="hiveDataSource"/>
+        </property>
+        <property name="mysqlBaseDataSource">
+            <ref bean="mysqlBaseDataSource"/>
+        </property>
+        <property name="graphDataSource">
+            <ref bean="graphDataSource"/>
+        </property>
+        <property name="oracleDataSource">
+            <ref bean="oracleDataSource"/>
+        </property>
+        <property name="sparkDataSource">
+            <ref bean="sparkDataSource"/>
+        </property>
+    </bean>-->
+
+    <!--<bean id="messageService" class="com.qtone.score.mq.MessageService"/>-->
+
+    <!--<bean id="calculateExcute" class="com.qtone.score.CalculateExecute"/>-->
+
+    <!--<bean id="emailSender" class="com.qtone.common.util.EmailSender"/>-->
+
+    <!--<bean id="runner" class="com.qtone.score.Runner"/>-->
+
+</beans>

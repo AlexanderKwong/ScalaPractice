@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:shardingConfig/tb_exam_obj_que_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_obj_score_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_sub_que_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_sub_score_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_mark_log_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_markingdetail_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_marking_custom_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_stu_subject_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_stu_subject_score_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_temp_seq_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_report_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_subject_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_subject_question_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_scorepoint_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_exam_question_opt_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_question_subject_group_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_issue_school_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_issue_class_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_ques_mark_setting_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_markrule_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_marking_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_postil_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_studentpaperabsent_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_student_paper_absent_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paperstudent_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paperimport_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_questionknowledge_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_mark_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_mark_quality_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_paper_mark_detail_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_temp_seq_batch_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_temp_seq_batch_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_stu_score_result_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_stu_que_score_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_stu_score_append_rule.xml"/>
+    <import resource="classpath:shardingConfig/test_shardingDataSourceRule.xml"/>
+
+    <bean id="shardingRule" class="com.dangdang.ddframe.rdb.sharding.api.rule.ShardingRule">
+        <constructor-arg index="0">
+            <ref bean="dataSourceRule"/>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="tb_exam_obj_que_rule"/>
+                <ref bean="tb_exam_obj_score_rule"/>
+                <ref bean="tb_exam_sub_que_rule"/>
+                <ref bean="tb_exam_sub_score_rule"/>
+                <ref bean="tb_exam_mark_log_rule"/>
+                <ref bean="tb_exam_markingdetail_rule"/>
+                <ref bean="tb_exam_marking_custom_rule"/>
+                <ref bean="tb_exam_stu_subject_rule"/>
+                <ref bean="tb_exam_stu_subject_score_rule"/>
+                <ref bean="tb_exam_temp_seq_rule"/>
+                <ref bean="tb_exam_paper_rule"/>
+                <ref bean="tb_exam_paper_subject_rule"/>
+                <ref bean="tb_exam_paper_subject_question_rule"/>
+                <ref bean="tb_exam_scorepoint_rule"/>
+                <ref bean="tb_exam_paper_exam_question_opt_rule"/>
+                <ref bean="tb_exam_question_subject_group_rule"/>
+                <ref bean="tb_exam_issue_school_rule"/>
+                <ref bean="tb_exam_issue_class_rule"/>
+                <ref bean="tb_exam_ques_mark_setting_rule"/>
+                <ref bean="tb_exam_markrule_rule"/>
+                <ref bean="tb_exam_paper_report_rule"/>
+                <ref bean="tb_exam_marking_rule"/>
+                <ref bean="tb_exam_postil_rule"/>
+                <ref bean="tb_exam_studentpaperabsent_rule"/>
+                <ref bean="tb_exam_student_paper_absent_rule"/>
+                <ref bean="tb_exam_paperstudent_rule"/>
+                <ref bean="tb_exam_paperimport_rule"/>
+                <ref bean="tb_exam_questionknowledge_rule"/>
+                <ref bean="tb_exam_paper_mark_rule"/>
+                <ref bean="tb_exam_paper_mark_quality_rule"/>
+                <ref bean="tb_exam_paper_mark_detail_rule"/>
+                <ref bean="tb_exam_temp_seq_batch_rule"/>
+                <ref bean="tb_exam_stu_score_result_rule"/>
+                <ref bean="tb_exam_stu_que_score_rule"/>
+                <ref bean="tb_exam_stu_score_append_rule"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

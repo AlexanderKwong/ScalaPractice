@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--start 分表定义-->
+    <bean id="tb_exam_student_paper_absent_rule" class="com.dangdang.ddframe.rdb.sharding.api.rule.TableRule">
+        <constructor-arg value="tb_exam_student_paper_absent" index="0"/>
+        <constructor-arg index="1">
+            <list>
+                <value>tb_exam_student_paper_absent</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="2" ref="dataSourceRule"/>
+        <constructor-arg index="3" ref="databaseShardingStrategy_paperId"/>
+    </bean>
+    <!--end 分表定义-->
+</beans>

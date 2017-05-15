@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <context:component-scan base-package="com.qtone"/>
+    <!--<import resource="classpath:dev/spring-beans.xml"/>-->
+
+    <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="${mq_calculate_url}"/>
+    </bean>
+
+    <!-- Spring用于管理真正的ConnectionFactory的ConnectionFactory -->
+    <bean id="cacheConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <!-- 目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory -->
+        <property name="targetConnectionFactory" ref="connectionFactory"/>
+
+        <property name="sessionCacheSize" value="10"/>
+
+        <property name="clientId" value="div1,div2"/>
+    </bean>
+
+    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
+        <property name="connectionFactory" ref="cacheConnectionFactory"/>
+    </bean>
+
+    <!--这个是队列目的地-->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="${mq_score_queue}"/>
+    </bean>
+
+    <!--Topic-->
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg index="0" value="${mq_calculate_topic}"/>
+    </bean>
+
+    <!--报表专用监听器-->
+    <bean id="reportTopicListener" class="com.qtone.score.mq.ReportTopicListener">
+        <property name="calculateExecute">
+            <ref bean="calculateExecute"/>
+        </property>
+        <property name="messageProducer">
+            <ref bean="messageProducer"/>
+        </property>
+    </bean>
+
+    <!--统分专用监听器-->
+    <bean id="calculateTopicListener" class="com.qtone.score.mq.CalculateTopicListener">
+        <property name="calculateExecute">
+            <ref bean="calculateExecute"/>
+        </property>
+    </bean>
+
+    <!--报表监听容器-->
+    <bean id="topicListenerContainer4Report"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="messageListener" ref="reportTopicListener"/>
+        <property name="destination" ref="topicDestination"/>
+        <!-- 开启订阅模式 -->
+        <property name="pubSubDomain" value="true"/>
+        <!---设置订阅者的ID - 在持久化时，当这个客户端不在线时，消息就存在数据库里，直到被这个ID的订阅者消费掉-->
+        <property name="subscriptionDurable" value="true"/>
+        <!--配置订阅者ID-->
+        <property name="clientId" value="div1"/>
+        <!--配置需要持久化的订阅者的ID-->
+        <property name="durableSubscriptionName" value="div1"/>
+    </bean>
+
+    <!--统分监听容器-->
+    <bean id="topicListenerContainer4Calculate"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="messageListener" ref="calculateTopicListener"/>
+        <property name="destination" ref="topicDestination"/>
+        <property name="pubSubDomain" value="true"/>
+        <property name="subscriptionDurable" value="true"/>
+        <property name="clientId" value="div2"/>
+        <property name="durableSubscriptionName" value="div2"/>
+    </bean>
+
+    <bean id="messageProducer" class="com.qtone.score.mq.MessageProducer">
+        <property name="jmsTemplate" ref="jmsTemplate"/>
+    </bean>
+
+</beans>
+
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+        <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--xmlns:context="http://www.springframework.org/schema/context"-->
+        <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+        <!--http://www.springframework.org/schema/beans/spring-beans-3.0.xsd-->
+        <!--http://www.springframework.org/schema/context-->
+        <!--http://www.springframework.org/schema/context/spring-context-3.0.xsd-->
+        <!--http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">-->
+
+        <!--<context:component-scan base-package="com.qtone"/>-->
+
+        <!--&lt;!&ndash; 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供&ndash;&gt;-->
+        <!--<bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">-->
+        <!--<property name="brokerURL" value="${mq_calculate_url}"/>-->
+        <!--</bean>-->
+
+        <!--&lt;!&ndash; Spring用于管理真正的ConnectionFactory的ConnectionFactory &ndash;&gt;-->
+        <!--<bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">-->
+        <!--&lt;!&ndash; 目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory &ndash;&gt;-->
+        <!--<property name="targetConnectionFactory" ref="targetConnectionFactory"/>-->
+        <!--</bean>-->
+
+        <!--&lt;!&ndash; Spring提供的JMS工具类，它可以进行消息发送、接收等 &ndash;&gt;-->
+        <!--<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">-->
+        <!--&lt;!&ndash; 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 &ndash;&gt;-->
+        <!--<property name="connectionFactory" ref="connectionFactory"/>-->
+        <!--</bean>-->
+
+        <!--&lt;!&ndash;这个是队列目的地&ndash;&gt;-->
+        <!--<bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">-->
+        <!--<constructor-arg index="0" value="${mq_score_queue}"/>-->
+        <!--</bean>-->
+
+        <!--</beans>-->
