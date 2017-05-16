@@ -51,13 +51,13 @@ object TestJDBC {
     val sharingRouter = SpringUtil.getSpringBean(null, "shardingRouter").asInstanceOf[SharingRouter]
 
     import collection.JavaConversions._
-
+/*
     //考试
     val paperDF = SparkJDBCExecutor.executeQuery(sqlContext,sharingRouter.route(PAPER_SQL, paperId))
     //考试科目
     val paperSubjectDF = SparkJDBCExecutor.executeQuery(sqlContext,sharingRouter.route(PAPER_SUBJECT_SQL, paperId, paperExamId))
     //学生
-    val studentDF = SparkJDBCExecutor.executeQuery(sqlContext,sharingRouter.route(STUDENT_SQL, paperId, paperExamId))
+    val studentDF = SparkJDBCExecutor.executeQuery(sqlContext,sharingRouter.route(STUDENT_SQL, paperId, paperExamId))*/
     //题目
     val questionDF = SparkJDBCExecutor.executeQuery(sqlContext,sharingRouter.route(QUESTIONS_SQL, paperId, paperExamId))
     //客观题
@@ -91,9 +91,74 @@ object TestJDBC {
     //用到自勉到函数lit()
     import org.apache.spark.sql.functions._
 
+    //为了减少大表的关联次数（学生每题），先将题目、科目、考试信息关联起来
+
     //写score_detail表以供报表使用
-    scoreObjScoreDF.createOrReplaceTempView("score_tb_exam_obj_score")
+  /*  scoreObjScoreDF.createOrReplaceTempView("score_tb_exam_obj_score")
     studentDF.createOrReplaceTempView("tb_exam_issue_student")
+
+    //得到试卷的基本信息，客观题，主观题，总分分数，其中综合科将包含它自身，以及N个拆开的子科目
+    val paperScoreDF = sqlContext.sql(
+      """
+        |SELECT
+        |t3.paperId,
+        |t3.paperName,
+        |t3.Id AS paperExamId,
+        |t3.paperExamName,
+        |t2.id AS subjectId,
+        |t2.subjectName,
+        |t2.shortName as subjectShortName,
+        |ROUND (SUM (CASE WHEN t1.TYPE != 4 THEN t1.score ELSE 0 END), 2)
+        |objTotal,
+        |ROUND (SUM (CASE WHEN t1.TYPE = 4 THEN t1.score ELSE 0 END), 2)
+        |subTotal,
+        |ROUND (SUM (t1.score), 2) paperTotal,
+        |COALESCE (t3.isAB, 0) AS isAB,
+        |t3.isComprehensive as isComprehensiveSubject
+        |FROM tb_exam_paper_subject_question t1
+        |JOIN tb_exam_paper_subject t3
+        |ON (t1.paperId = t3.paperId AND t1.paperExamId = t3.id)
+        |JOIN
+        |tb_cas_subject t2
+        |ON (t1.subjectId = t2.id)
+        |WHERE t1.questionOrder>0
+        |GROUP BY
+        |t3.paperId,
+        |t3.paperName,
+        |t3.id,
+        |t3.paperExamName,
+        |t3.isAB,
+        |t3.isComprehensive,
+        |t2.Id,
+        |t2.subjectName,
+        |t2.shortName
+        |union all
+        |SELECT
+        |t2.paperId,
+        |t2.paperName,
+        |t2.Id AS paperExamId,
+        |t2.paperExamName,
+        |t2.id AS subjectId,
+        |t2.paperExamName AS subjectName,
+        |'ZH' AS subjectShortName,
+        |ROUND (SUM (CASE WHEN t1.TYPE != 4 THEN t1.score ELSE 0 END), 2) AS objTotal,
+        |ROUND (SUM (CASE WHEN t1.TYPE = 4 THEN t1.score ELSE 0 END), 2) AS subTotal,
+        |ROUND (SUM (t1.score), 2) paperTotal,
+        |COALESCE (t2.isAB, 0) AS isAB,
+        |0 AS isComprehensiveSubject
+        |FROM tb_exam_paper_subject_question t1
+        |JOIN tb_exam_paper_subject t2
+        |ON (t1.paperId = t2.paperId AND t1.paperExamId = t2.id)
+        |WHERE t2.isComprehensive=1 and t1.questionOrder>0
+        |GROUP BY t2.paperId,
+        |t2.paperName,
+        |t2.id,
+        |t2.paperExamName,
+        |t2.isAB,
+        |t2.isComprehensive
+      """.stripMargin
+    )*/
+
 
 
 
@@ -101,7 +166,7 @@ object TestJDBC {
     val currentTime = new Timestamp(System.currentTimeMillis())
 
     //写入tb_exam_obj_score
-    scoreObjScoreDF
+   /* scoreObjScoreDF
         .select("paperId","paperName","paperExamId","paperExamName","stuId","stuSeq","schoolId","questionId","questionOrder","answer","ABFlag","questionScore")
       .withColumn("id",  uuid())
       .withColumn("createDate", lit(currentTime))
@@ -118,7 +183,7 @@ object TestJDBC {
           "driver"-> "com.mysql.jdbc.Driver",
           "user"-> "admin",
           "password"-> "JY7wlXUC8rKz")
-      ).save()
+      ).save()*/
     //存储到文件（这里会有很多分片文件。。。） 使用repartition将其合并
 //    objScoreDF.rdd.repartition(1).saveAsTextFile("D:/sparktest/objscore")
 
@@ -142,8 +207,8 @@ object TestJDBC {
       groupByStu.agg(sum("questionScore") as "objectiveTotal")
       ,Seq("paperId","paperName","paperExamId","paperExamName","stuId","stuSeq","dubiousType")
     )
-      //.show(100)
-      .withColumn("id", uuid())
+      .show(100)
+//      .withColumn("id", uuid())
 
     /**
       * 将stuQueDetail转置导出到tb_exam_stu_que_score
