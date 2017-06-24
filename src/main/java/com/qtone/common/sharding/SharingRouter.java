@@ -35,6 +35,8 @@ import com.dangdang.ddframe.rdb.sharding.router.SQLRouteResult;
 import com.google.common.base.Preconditions;
 import com.qtone.spark.jdbc.SparkJDBCConfigure;
 
+import java.beans.Transient;
+import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.*;
@@ -42,11 +44,11 @@ import java.util.*;
 /**
  * Created by kwong on 2017/5/8.
  */
-public class SharingRouter {
+public class SharingRouter implements Serializable {
 
-    private final ThreadLocalObjectContainer threadLocalObjectContainer;
-    private final ShardingContext context;
-    private final DataSourceRule dataSourceRule;
+    private transient final ThreadLocalObjectContainer threadLocalObjectContainer;
+    private transient final ShardingContext context;
+    private transient final DataSourceRule dataSourceRule;
 
     public SharingRouter(ShardingRule shardingRule, DataSourceRule dataSourceRule){
         this.threadLocalObjectContainer = new ThreadLocalObjectContainer();

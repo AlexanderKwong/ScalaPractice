@@ -27,7 +27,6 @@
     <import resource="classpath:shardingConfig/tb_exam_markrule_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_marking_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_postil_rule.xml"/>
-    <import resource="classpath:shardingConfig/tb_exam_studentpaperabsent_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_student_paper_absent_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_paperstudent_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_paperimport_rule.xml"/>
@@ -36,10 +35,10 @@
     <import resource="classpath:shardingConfig/tb_exam_paper_mark_quality_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_paper_mark_detail_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_temp_seq_batch_rule.xml"/>
-    <import resource="classpath:shardingConfig/tb_exam_temp_seq_batch_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_stu_score_result_rule.xml"/>
     <import resource="classpath:shardingConfig/tb_exam_stu_que_score_rule.xml"/>
-    <import resource="classpath:shardingConfig/tb_exam_stu_score_append_rule.xml"/>
+    <import resource="classpath:shardingConfig/tb_exam_sub_score_detail_rule.xml"/>
+    <import resource="classpath:shardingConfig/bindingTableRules.xml"/>
     <import resource="classpath:shardingConfig/test_shardingDataSourceRule.xml"/>
 
     <bean id="shardingRule" class="com.dangdang.ddframe.rdb.sharding.api.rule.ShardingRule">
@@ -71,7 +70,6 @@
                 <ref bean="tb_exam_paper_report_rule"/>
                 <ref bean="tb_exam_marking_rule"/>
                 <ref bean="tb_exam_postil_rule"/>
-                <ref bean="tb_exam_studentpaperabsent_rule"/>
                 <ref bean="tb_exam_student_paper_absent_rule"/>
                 <ref bean="tb_exam_paperstudent_rule"/>
                 <ref bean="tb_exam_paperimport_rule"/>
@@ -82,8 +80,9 @@
                 <ref bean="tb_exam_temp_seq_batch_rule"/>
                 <ref bean="tb_exam_stu_score_result_rule"/>
                 <ref bean="tb_exam_stu_que_score_rule"/>
-                <ref bean="tb_exam_stu_score_append_rule"/>
+                <ref bean="tb_exam_sub_score_detail_rule"/>
             </list>
         </constructor-arg>
+        <constructor-arg index="2" ref="bindingRuleTables"/>
     </bean>
 </beans>

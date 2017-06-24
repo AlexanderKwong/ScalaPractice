@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!--绑定表配置-->
+    <!--<import resource="classpath:shardingConfig/tb_exam_stu_subject_rule.xml"/>-->
+    <!--<import resource="classpath:shardingConfig/tb_exam_stu_subject_score_rule.xml"/>-->
+    <!--<import resource="classpath:shardingConfig/tb_exam_stu_subject_score_rule.xml"/>-->
+    <!--<import resource="classpath:shardingConfig/tb_exam_stu_subject_score_rule.xml"/>-->
+
+    <!--绑定stu_subject 和stu_subject_score-->
+    <bean id="bindingTableRuleStuSubject_Score" class="com.dangdang.ddframe.rdb.sharding.api.rule.BindingTableRule">
+        <constructor-arg index="0" ref="binding1"/>
+    </bean>
+    <bean id="binding1" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="tb_exam_stu_subject_rule"/>
+                <ref bean="tb_exam_stu_subject_score_rule"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--绑定stu_subject 和 sub_score-->
+    <bean id="bindingTableRuleStuSubject_SubScore" class="com.dangdang.ddframe.rdb.sharding.api.rule.BindingTableRule">
+        <constructor-arg index="0" ref="binding2"/>
+    </bean>
+    <bean id="binding2" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="tb_exam_stu_subject_rule"/>
+                <ref bean="tb_exam_sub_score_rule"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--绑定stu_subject 和 obj_score-->
+    <bean id="bindingTableRuleStuSubject_ObjScore" class="com.dangdang.ddframe.rdb.sharding.api.rule.BindingTableRule">
+        <constructor-arg index="0" ref="binding3"/>
+    </bean>
+    <bean id="binding3" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="tb_exam_stu_subject_rule"/>
+                <ref bean="tb_exam_obj_score_rule"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <!--绑定paper 和 paperSubject 和 paperSubjectQuestion-->
+    <bean id="bindingTableRulePaper_Subject_Question" class="com.dangdang.ddframe.rdb.sharding.api.rule.BindingTableRule">
+        <constructor-arg index="0" ref="binding4"/>
+    </bean>
+    <bean id="binding4" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="tb_exam_paper_rule"/>
+                <ref bean="tb_exam_paper_subject_rule"/>
+                <ref bean="tb_exam_paper_subject_question_rule"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--所有绑定组合-->
+    <bean id="bindingRuleTables" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="bindingTableRuleStuSubject_Score"/>
+                <!--<ref bean="bindingTableRuleStuSubject_SubScore"/>-->
+                <!--<ref bean="bindingTableRuleStuSubject_ObjScore"/>-->
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

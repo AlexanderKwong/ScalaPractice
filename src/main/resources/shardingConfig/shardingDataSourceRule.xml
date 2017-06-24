@@ -34,7 +34,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_1" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -67,7 +67,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_2" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -100,7 +100,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_3" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -133,7 +133,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_4" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -166,7 +166,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_5" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -199,7 +199,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_6" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -232,7 +232,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_7" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -265,7 +265,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_8" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -298,7 +298,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_9" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -331,7 +331,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_10" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -364,7 +364,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_11" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -397,7 +397,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_12" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -430,7 +430,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_13" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -463,7 +463,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_14" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -496,7 +496,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_15" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -529,7 +529,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_16" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -562,7 +562,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_17" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -595,7 +595,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_18" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -628,7 +628,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_19" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -661,7 +661,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_20" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -694,7 +694,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_21" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -727,7 +727,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_22" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -760,7 +760,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_23" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -793,7 +793,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_24" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -826,7 +826,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_25" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -859,7 +859,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_26" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -892,7 +892,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_27" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -925,7 +925,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_28" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -958,7 +958,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_29" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -991,7 +991,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_30" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1024,7 +1024,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_31" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1057,7 +1057,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_32" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1090,7 +1090,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_33" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1123,7 +1123,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_34" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1156,7 +1156,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_35" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1189,7 +1189,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_36" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1222,7 +1222,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_37" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1255,7 +1255,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_38" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1288,7 +1288,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_39" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1321,7 +1321,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_40" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1354,7 +1354,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_41" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1387,7 +1387,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_42" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1420,7 +1420,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_43" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1453,7 +1453,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_44" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1486,7 +1486,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_45" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1519,7 +1519,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_46" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1552,7 +1552,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_47" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1585,7 +1585,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_48" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1618,7 +1618,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_49" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1651,7 +1651,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_50" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1684,7 +1684,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_51" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1717,7 +1717,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_52" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1750,7 +1750,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_53" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1783,7 +1783,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_54" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1816,7 +1816,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_55" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1849,7 +1849,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_56" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1882,7 +1882,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_57" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1915,7 +1915,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_58" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1948,7 +1948,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_59" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -1981,7 +1981,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_60" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -2014,7 +2014,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_61" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -2047,7 +2047,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_62" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -2080,7 +2080,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="zyj_exam_63" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -2113,7 +2113,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
 
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat"/>
+        <property name="filters" value="stat,log4j"/>
     </bean>
 
     <bean id="dataSourceRule" class="com.dangdang.ddframe.rdb.sharding.api.rule.DataSourceRule">
